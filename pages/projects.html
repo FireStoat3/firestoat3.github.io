@@ -8,36 +8,40 @@
         <meta name="keywords" content="FireStoat3,projects">
         <meta name="author" content="FireStoat3">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="../css/style.css">
         <script src="./js/script.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
+            <img src="../img/161834755.jpeg">
             <h1>FireStoat3</h1>
-            <nav>
+            <nav id="menu">
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li>Projects</li>
                 </ul>
             </nav>
-            <nav>
+            <nav id="breadcrumb">
                 <p>You are here: </p>
                 <ul>
                     <li><a href="../index.html">Home</a></li>
+                    <li>></li>
                     <li>Projects</li>
                 </ul>
             </nav>
         </header>
         <main>
-            <h2>Projects</h2>
-            <p>In this webpage you will find some project which I co-developed or developed.</p>
-            <ul>
+            <p id="presentationText">&#x1F527; Find out the projects I co-developed or developed.</p>
+            <ul id="projectList">
                 <li>
                     <h2>UNI COOKED</h2>
                     <dl>
                         <dt class="projectDescription">Description</dt>
                         <dd>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda molestiae nihil minima veniam tempora, sit, praesentium veritatis quas nemo provident ipsam rem. Quo aliquam sunt soluta ex, id libero porro.
+                            A cooking website made for the Web Technology course attended during the studies for my bachelor's degree in Computer Science, placed fourth in the <a href="https://web.math.unipd.it/CAA/" hreflang="it" lang="it">Accattivante Accessibile</a> contest.
                         </dd>
                         <dt class="projectType">
                             Project type
@@ -45,20 +49,26 @@
                         <dd>
                             Group project
                         </dd>
-                        <dt class="GitHub">
+                        <dt class="githubLink">
                             GitHub repository
                         </dt>
                         <dd>
                             <a href="https://github.com/uni-cooked" hreflang="it">github.com/uni-cooked</a>
                         </dd>
+                        <dt class="projectLink">
+                            Website
+                        </dt>
+                        <dd>
+                            <a href="https://caa.studenti.math.unipd.it/asoranzo/" hreflang="it">https://caa.studenti.math.unipd.it/asoranzo/</a>
+                        </dd>
                     </dl>
                 </li>
                 <li>
-                    <h2>Distributed warehouse concept by ALimitedGroup</h2>
+                    <h2>Distributed warehouse system concept by ALimitedGroup</h2>
                     <dl>
                         <dt class="projectDescription">Description</dt>
                         <dd>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda molestiae nihil minima veniam tempora, sit, praesentium veritatis quas nemo provident ipsam rem. Quo aliquam sunt soluta ex, id libero porro.
+                            A concept of a distributed warehouse system made by a team of 8 people (including me) for the Software Engineering course attended during the studies for my bachelor's degree in Computer Science. The goal of the project was not only the development itself, but also to learn and improve good practices of Software Engineering.
                         </dd>
                         <dt class="projectType">
                             Project type
@@ -85,7 +95,7 @@
                     <dl>
                         <dt class="projectDescription">Description</dt>
                         <dd>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda molestiae nihil minima veniam tempora, sit, praesentium veritatis quas nemo provident ipsam rem. Quo aliquam sunt soluta ex, id libero porro.
+                            A simple Java program that extracts data from <abbr title="Virtual Contact File">VCF</abbr> cards. The project was programmed for both personal necessities and starting to learn about the Java programming language.
                         </dd>
                         <dt class="projectType">
                             Project type
@@ -104,7 +114,8 @@
             </ul>
         </main>
         <footer>
-            <p>&copy;2025 FireStoat3 <a href="#top">Go up</a></p>
+            <p>&copy;2025 FireStoat3</p>
+            <a href="#top">Go up</a>
         </footer>
     </body>
 </html>

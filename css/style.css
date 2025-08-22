@@ -1,0 +1,288 @@
+:root {
+    --first-color: #000000;
+    --secondary-color: #B04411;
+    --ternary-color: #8c00ff;
+    --home-main-bg-color: #3030309a;
+    --link-visited-color: #97FF8A;
+    --project-element-color: #ee5d1a49;
+}
+
+/*
+General setup
+*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+a {
+    color: white;
+    text-decoration-color: white;
+    text-decoration-thickness: 0.1em;
+    border-bottom: 2px solid white;
+}
+
+a:visited {
+    border-bottom-color: var(--link-visited-color);
+}
+
+main a {
+    background-image: url("../img/mdi--link.svg");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-origin: padding-box;
+    background-size: 1em;
+    padding-left: 1.2em;
+}
+
+/*
+Header
+*/
+
+header img {
+    display: inline-block;
+    border-radius: 50%;
+    width: 2em;
+    vertical-align: middle;
+    margin-left: 0.5em;
+}
+
+header h1 {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 0.2em;
+}
+
+nav#menu {
+    float: right;
+    line-height: 2.5em;
+    padding: 0.5em;
+}
+
+nav#menu ul, nav#breadcrumb ul {
+    width: fit-content;
+    padding: 0;
+}
+
+nav#menu li, nav#breadcrumb li{
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav#menu a {
+    border-bottom: none;
+    text-decoration-color: white;
+}
+
+nav#menu a:visited {
+    text-decoration-color: var(--link-visited-color);
+}
+
+nav#breadcrumb {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.01em;
+}
+
+nav#breadcrumb p {
+    max-width: fit-content
+}
+
+nav#breadcrumb li {
+    padding-left: 1em;
+}
+
+@media screen and (max-width: 343px){
+    nav#menu {
+        clear: right;
+        width: 100%;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        margin-top: -2em;
+    }
+}
+
+@media screen and (max-width: 268px) {
+    nav#breadcrumb {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/*
+Body
+*/
+
+body {
+    color: white;
+    background-color: var(--first-color)
+}
+
+@keyframes wave {
+    0% {border-radius: 100% 0% 0% 0%; height: 50%}
+    50% {border-radius: 0% 100% 0% 0%; height: 20%}
+    100% {border-radius: 100% 0% 0% 0%; height: 50%}
+}
+
+@keyframes invertedWave {
+    0% {border-radius: 0% 100% 0% 0%; height: 40%}
+    50% {border-radius: 100% 0% 0% 0%; height: 65%}
+    100% {border-radius: 0% 100% 0% 0%; height: 40%}
+}
+
+@keyframes type {
+    0% {width: 0%}
+    50% {width: 100%}
+    100% {width: 0%}
+}
+
+@keyframes blinkBorder {
+    0% {border-right: none;}
+    50% {border-right: 3px solid var(--secondary-color);}
+    100% {border-right: none;}
+}
+
+p#presentationText{
+    text-align: left;
+    border-right: 3px solid var(--secondary-color);
+    max-width: fit-content;
+    animation: type 5s steps(50,end) infinite, blinkBorder 1s linear infinite;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+body::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 0 100% 0% 0%;
+    width: 100%;
+    height: 50%;
+    animation-name: invertedWave;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    background-color: var(--ternary-color);
+}
+
+body::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 100% 0% 0% 0%;
+    width: 100%;
+    height: 50%;
+    background-color: var(--secondary-color);
+    animation-name: wave;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+main {
+    margin: 1em;
+    padding: 1em;
+    background-color: var(--home-main-bg-color);
+    border-radius: 15px
+}
+
+main:has(dl#mainDl) {
+    text-align: center;
+}
+
+dl#mainDl {
+    text-align: left;
+}
+
+dl#mainDl dt {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+dl#mainDl dt {
+    background-image: url("../img/mdi--hashtag.svg");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-origin: padding-box;
+    background-size: 1em;
+    padding: 1em;
+}
+
+ul#projectList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin: 0;
+}
+
+ul#projectList li {
+    flex: 0 0 48%;
+    box-sizing: border-box;
+    list-style-type: none;
+    background-color: var(--project-element-color);
+    padding: 1em;
+    text-align: center;
+    border-radius: 15px;
+}
+
+ul#projectList dl {
+    text-align: left;
+}
+
+ul#projectList dt {
+    text-indent: -999em;
+    width: 2em;
+    height: 2em;
+    float: left;
+    background-repeat: no-repeat;
+}
+
+ul#projectList dd{
+    padding-left: 2em;
+    margin: 0;
+    padding-bottom: 1em;
+}
+
+dt.projectDescription {
+    background-image: url("../img/mdi--information.svg");
+}
+
+dt.projectType {
+    background-image: url("../img/mdi--account-group.svg");
+}
+
+dt.githubLink {
+    background-image: url("../img/mdi--github.svg");
+}
+
+dt.projectLink {
+    background-image: url("../img/mdi--web.svg");
+}
+
+@media screen and (max-width: 608px){
+    ul#projectList {
+        display: block;
+        padding: 0;
+    }
+
+    ul#projectList li{
+        margin: 1em;
+    }
+}
+
+footer {
+    text-align: center;
+}
