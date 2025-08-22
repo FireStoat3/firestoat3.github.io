@@ -5,11 +5,16 @@
     --home-main-bg-color: #3030309a;
     --link-visited-color: #97FF8A;
     --project-element-color: #ee5d1a49;
+    --github-badge-bg-color: black;
 }
 
 /*
 General setup
 */
+
+html {
+    overflow-x: hidden;
+}
 
 html, body {
     margin: 0;
@@ -19,6 +24,7 @@ html, body {
 body {
     position: relative;
     min-height: 100vh;
+    min-width: 100vw;
 }
 
 a {
@@ -39,6 +45,7 @@ main a {
     background-origin: padding-box;
     background-size: 1em;
     padding-left: 1.2em;
+    overflow-wrap: break-word;
 }
 
 /*
@@ -126,7 +133,7 @@ Body
 
 body {
     color: white;
-    background-color: var(--first-color)
+    background-color: var(--first-color);
 }
 
 @keyframes wave {
@@ -193,10 +200,10 @@ body::after {
 }
 
 main {
-    margin: 1em;
+    margin: 5vw;
     padding: 1em;
     background-color: var(--home-main-bg-color);
-    border-radius: 15px
+    border-radius: 15px;
 }
 
 main:has(dl#mainDl) {
@@ -272,7 +279,7 @@ dt.projectLink {
     background-image: url("../img/mdi--web.svg");
 }
 
-@media screen and (max-width: 608px){
+@media screen and (max-width: 831px){
     ul#projectList {
         display: block;
         padding: 0;
@@ -281,6 +288,38 @@ dt.projectLink {
     ul#projectList li{
         margin: 1em;
     }
+}
+
+div#githubBadge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: var(--github-badge-bg-color);
+    width: fit-content;
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+#githubBadgeDivLink {
+    background-image: none;
+    padding-left: 0;
+    text-decoration: none;
+    border: none;
+}
+
+#githubBadgeDivLink:visited {
+    text-decoration: none;
+    border: none;
+}
+
+div#githubBadge img {
+   margin-right: 0.5em;
+}
+
+div#githubBadge a {
+    background-image: none;
+    padding-left: 0;
 }
 
 footer {
