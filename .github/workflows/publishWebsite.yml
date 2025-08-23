@@ -18,7 +18,7 @@ jobs:
           mkdir files/css
           mkdir files/img
       - name: Copy HTML files
-        run: cp -a ./pages ./files/
+        run: cp -a ./pages ./files/ && cp ./index.html ./files/
       - name: Copy CSS files
         run: cp -a ./css ./files/
       - name: Copy images
