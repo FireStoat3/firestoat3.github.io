@@ -14,11 +14,14 @@ General setup
 
 html {
     overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-color) black;
 }
 
 html, body {
     margin: 0;
     padding: 0;
+    line-height: 1.6em;
 }
 
 body {
@@ -29,13 +32,12 @@ body {
 
 a {
     color: white;
-    text-decoration-color: white;
     text-decoration-thickness: 0.1em;
-    border-bottom: 2px solid white;
+    text-decoration-color: white;
 }
 
 a:visited {
-    border-bottom-color: var(--link-visited-color);
+    text-decoration-color: var(--link-visited-color);
 }
 
 main a {
@@ -57,19 +59,19 @@ header img {
     border-radius: 50%;
     width: 2em;
     vertical-align: middle;
-    margin-left: 0.5em;
+    margin-left: 1em;
 }
 
 header h1 {
     display: inline-block;
     vertical-align: middle;
-    padding-left: 0.2em;
+    margin-left: 0.2em;
 }
 
 nav#menu {
     float: right;
     line-height: 2.5em;
-    padding: 0.5em;
+    margin-right: 1em;
 }
 
 nav#menu ul, nav#breadcrumb ul {
@@ -108,14 +110,24 @@ nav#breadcrumb li {
     padding-left: 1em;
 }
 
-@media screen and (max-width: 343px){
+@media screen and (max-width: 350px){
     nav#menu {
-        clear: right;
-        width: 100%;
+        clear: both;
         padding: 0;
         display: flex;
         justify-content: center;
         margin-top: -2em;
+        margin-right: 0;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header img {
+        margin-top: 1em;
     }
 }
 
@@ -204,6 +216,13 @@ main {
     padding: 1em;
     background-color: var(--home-main-bg-color);
     border-radius: 15px;
+    backdrop-filter: blur(10px)
+}
+
+@media screen and (min-width: 696px) {
+    main {
+        margin: 2vw 20vw 2vw;
+    }
 }
 
 main:has(dl#mainDl) {
@@ -279,7 +298,7 @@ dt.projectLink {
     background-image: url("../img/mdi--web.svg");
 }
 
-@media screen and (max-width: 831px){
+@media screen and (max-width: 1322px){
     ul#projectList {
         display: block;
         padding: 0;
@@ -322,6 +341,14 @@ div#githubBadge a {
     padding-left: 0;
 }
 
+/*
+Footer
+*/
+
 footer {
     text-align: center;
+}
+
+footer a:visited {
+   text-decoration-color: white;
 }
