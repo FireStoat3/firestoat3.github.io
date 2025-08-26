@@ -1,11 +1,11 @@
 :root {
-    --first-color: #000000;
+    --first-color: #0A0A0A;
     --secondary-color: #B04411;
     --ternary-color: #8c00ff;
     --home-main-bg-color: #3030309a;
     --link-visited-color: #97FF8A;
     --project-element-color: #ee5d1a49;
-    --github-badge-bg-color: black;
+    --github-badge-bg-color: #0A0A0A;
 }
 
 /*
@@ -216,7 +216,7 @@ main {
     padding: 1em;
     background-color: var(--home-main-bg-color);
     border-radius: 15px;
-    backdrop-filter: blur(10px)
+    backdrop-filter: blur(30px);
 }
 
 @media screen and (min-width: 696px) {
@@ -263,7 +263,6 @@ ul#projectList li {
     text-align: center;
     border-radius: 15px;
 }
-
 ul#projectList dl {
     text-align: left;
 }
