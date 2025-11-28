@@ -340,6 +340,61 @@ div#githubBadge a {
     padding-left: 0;
 }
 
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+fieldset input, fieldset button, fieldset textarea {
+    border-radius: 10px;
+}
+
+#emailInputLabel {
+    order: 1;
+}
+
+#emailInput {
+    order: 2;
+    padding: 0.5em;
+}
+
+#textareaInputLabel {
+    order: 3
+}
+
+#textareaInput {
+    height: 30vh;
+    order: 4;
+    resize: none;
+    text-align: left;
+    padding: 0.5em;
+    font-family: sans-serif;
+}
+
+fieldset button {
+    order: 5;
+    max-width: 35%;
+    align-self: center;
+    padding: 0.7em;
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    display: inline-flex;
+    align-items: center;
+}
+
+fieldset button::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/mdi--send.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-right: 3px;
+}
+
 /*
 Footer
 */
