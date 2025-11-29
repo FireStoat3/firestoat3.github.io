@@ -18,8 +18,11 @@ jobs:
           mkdir files/css
           mkdir files/img
           mkdir files/js
+          mkdir files/resources
       - name: Copy HTML files
         run: cp -a ./pages ./files/ && cp ./index.html ./files/
+      - name: Copy JSON files
+        run: cp -a ./resources ./files/
       - name: Copy JS files
         run: cp -a ./js ./files
       - name: Copy CSS files
