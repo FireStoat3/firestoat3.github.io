@@ -31,6 +31,26 @@ const strToDigit = (string) => {
     return digits
 }
 
+function decodeEntities(encodedString) {
+  const textarea = document.createElement("textarea");
+  textarea.innerHTML = encodedString;
+  return textarea.value;
+}
+
+const getData = async () => {
+    fetch("./../resources/res.json").then((res)=>{
+        res.json().then((data)=>{
+            document.getElementById("dataDiv").style.display = "flex"
+            document.getElementById("dataA").href="mailto:"+data.email+"?subject="+data.subject
+            document.getElementById("clipboardA").addEventListener("click",(event)=>{
+                event.preventDefault()
+                navigator.clipboard.writeText(decodeEntities(data.email))
+                document.getElementById("clipboardMessage").style.display = "block"
+            })
+        })
+    })
+}   
+
 const checkCode = (event) => {
     event.preventDefault()
     const form = document.getElementById("codeForm")
@@ -39,10 +59,11 @@ const checkCode = (event) => {
     const pattern = /^\d+$/
     if (pattern.test(inputtedCode)) {
         const digits = strToDigit(inputtedCode)
+        document.getElementById("challengeDiv").style.display = "none"
         if (digits.length === code.length && JSON.stringify(digits) === JSON.stringify(code)) {
-            console.log("ok")
+            getData()
         } else {
-            console.log("nope")
+            document.getElementById("dataErrorDiv").style.display = "block"
         }
     }
 }

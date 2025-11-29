@@ -13,7 +13,7 @@
     </head>
     <body>
         <header>
-            <!--<img src="https://avatars.githubusercontent.com/u/161834755?v=4">-->
+            <img src="https://avatars.githubusercontent.com/u/161834755?v=4">
             <h1>FireStoat3</h1>
             <nav id="menu">
                 <ul>
@@ -33,8 +33,8 @@
         </header>
         <main>
             <h2>Contact Me</h2>
-            <div id="descriptionDiv">
-                <p>Please complete the challenge below to get an email you can use for contact me</p>
+            <div id="challengeDiv" class="descriptionDiv">
+                <p>Please complete the challenge below to get an email you can use to contact me</p>
                 <form id="codeForm" action="">
                     <div id="challangeCode">
                         <p>Your one-time code</p>
@@ -43,11 +43,23 @@
                     </div>
                     <fieldset>
                         <legend class="hideElement">Challange</legend>
-                        <input type="text" id="codeInput" name="codeInput" pattern="\d*" inputmode="numeric" required>
+                        <input type="text" id="codeInput" name="codeInput" pattern="\d*" inputmode="numeric" minlength="4" maxlength="4" required>
                         <label for="codeInput">Code</label>
                         <button type="submit" id="submit">Get email</button>
                     </fieldset>
                 </form>
+            </div>
+            <div id="dataDiv" class="descriptionDiv" role="alert">
+                <h3 id="dataH">Procedure completed successfully &#128516;</h3>
+                <a class="linkButton" id="dataA" href="">Send</a>
+                <a class="linkButton" href="" id="clipboardA">Copy</a>
+                <p id="clipboardMessage" role="alert">Copied to clipboard!</p>
+            </div>
+            <div id="dataErrorDiv" class="descriptionDiv" role="alert">
+                <h3>An error occurred... &#128577;</h3>
+                <p>Unfortunately, an error occurred while completing the challenge.</p>
+                <p>This could happen because you inserted the wrong or an invalid code.</p>
+                <p>Please refresh this page and try again...</p>
             </div>
         </main>
         <footer>

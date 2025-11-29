@@ -347,7 +347,7 @@ div#githubBadge a {
     padding-left: 0;
 }
 
-div#descriptionDiv {
+div.descriptionDiv {
     background-color: var(--project-element-color);
     padding: 1em;
     border-radius: 15px;
@@ -425,6 +425,78 @@ fieldset button:hover {
 
 fieldset button:hover::before {
     background-image: url("../img/mdi--email-white.svg");
+}
+
+div#dataDiv {
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+div#dataErrorDiv {
+    display: none;
+    text-align: center;
+}
+
+div#dataErrorDiv h3 {
+    text-align: left;
+}
+
+div#dataDiv h3 {
+    width: 100%;
+}
+
+a.linkButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.25em;
+    background-color: white;
+    color: black;
+    width: 70px;
+    height: 37px;
+    padding: 0 0.5em;
+    text-decoration: none;
+    border-radius: 15px;
+    background-image: none;
+}
+
+a.linkButton:hover {
+    background-color: black;
+    color: white;
+}
+
+a#dataA::before, a#clipboardA::before {
+    content: "";
+    width: 150px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-origin: padding-box;
+}
+
+a#dataA::before {
+    background-image: url("../img/mdi--email.svg");
+}
+
+a#clipboardA::before {
+    background-image: url("../img/mdi--clipboard-multiple-outline.svg");
+}
+
+a#dataA:hover::before {
+    background-image: url("../img/mdi--email-white.svg");
+}
+
+a#clipboardA:hover::before {
+    background-image: url("../img/mdi--clipboard-multiple-outline-white.svg");
+}
+
+p#clipboardMessage {
+    width: 100%;
+    text-align: center;
+    display: none;
 }
 
 /*
