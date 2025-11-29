@@ -12,6 +12,13 @@
 General setup
 */
 
+.hideElement {
+    font-size: 0.2em;
+    display: block;
+    position: absolute;
+    left: -999px;
+}
+
 html {
     overflow-x: hidden;
     scrollbar-width: thin;
@@ -110,7 +117,7 @@ nav#breadcrumb li {
     padding-left: 1em;
 }
 
-@media screen and (max-width: 350px){
+@media screen and (max-width: 450px){
     nav#menu {
         clear: both;
         padding: 0;
@@ -340,41 +347,56 @@ div#githubBadge a {
     padding-left: 0;
 }
 
+div#descriptionDiv {
+    background-color: var(--project-element-color);
+    padding: 1em;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+
+div#challangeCode {
+   text-align: center;
+}
+
+div#challangeCode p#code {
+    font-style: italic;
+}
+
 fieldset {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
+    align-items: center;
+    border: none;
 }
 
 fieldset input, fieldset button, fieldset textarea {
     border-radius: 10px;
 }
 
-#emailInputLabel {
-    order: 1;
+fieldset label {
+    order: 1
 }
 
-#emailInput {
+fieldset input {
     order: 2;
-    padding: 0.5em;
-}
-
-#textareaInputLabel {
-    order: 3
-}
-
-#textareaInput {
-    height: 30vh;
-    order: 4;
-    resize: none;
-    text-align: left;
-    padding: 0.5em;
-    font-family: sans-serif;
+    padding: 0.25em;
+    text-align: center;
 }
 
 fieldset button {
-    order: 5;
-    max-width: 35%;
+    order: 3;
+    max-width: 65%;
     align-self: center;
     padding: 0.7em;
     cursor: pointer;
@@ -382,6 +404,7 @@ fieldset button {
     background-color: white;
     display: inline-flex;
     align-items: center;
+    margin: 1em;
 }
 
 fieldset button::before {
@@ -389,10 +412,19 @@ fieldset button::before {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background-image: url('../img/mdi--send.svg');
+    background-image: url('../img/mdi--email.svg');
     background-size: contain;
     background-repeat: no-repeat;
     padding-right: 3px;
+}
+
+fieldset button:hover {
+    background-color: black;
+    color: white
+}
+
+fieldset button:hover::before {
+    background-image: url("../img/mdi--email-white.svg");
 }
 
 /*
