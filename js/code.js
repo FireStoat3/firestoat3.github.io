@@ -41,7 +41,12 @@ const getData = async () => {
     fetch("./../resources/res.json").then((res)=>{
         res.json().then((data)=>{
             document.getElementById("dataDiv").style.display = "flex"
-            document.getElementById("dataA").href="mailto:"+data.email+"?subject="+data.subject
+            document.getElementById("dataA").addEventListener("click",(event)=>{
+                event.preventDefault()
+                const link = document.createElement("a")
+                link.href="mailto:"+decodeEntities(data.email)+"?subject="+decodeEntities(data.subject)
+                link.click()
+            })
             document.getElementById("clipboardA").addEventListener("click",(event)=>{
                 event.preventDefault()
                 navigator.clipboard.writeText(decodeEntities(data.email))
