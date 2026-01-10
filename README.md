@@ -1,2 +1,2 @@
 # firestoat3.github.io
-GitHub repository for my website
+Repository for my GitHub  website
