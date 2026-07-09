@@ -270,6 +270,7 @@ ul#projectList li {
     text-align: center;
     border-radius: 15px;
 }
+
 ul#projectList dl {
     text-align: left;
 }
@@ -290,6 +291,10 @@ ul#projectList dd{
 
 dt.projectDescription {
     background-image: url("../img/mdi--information.svg");
+}
+
+dt.projectDate {
+    background-image: url("../img/mdi--calendar.svg");
 }
 
 dt.projectType {
