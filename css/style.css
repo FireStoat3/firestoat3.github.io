@@ -11,6 +11,14 @@
 /*
 General setup
 */
+ 
+@media screen and (min-height: 760px) {
+    .bottomFixedElement {
+        position: absolute;
+        bottom: 0;
+        width: 100vw;
+    }
+}
 
 .hideElement {
     font-size: 0.2em;
@@ -234,6 +242,42 @@ main {
     }
 }
 
+div#githubBadge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: var(--github-badge-bg-color);
+    width: fit-content;
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+#githubBadgeDivLink {
+    background-image: none;
+    padding-left: 0;
+    text-decoration: none;
+    border: none;
+}
+
+#githubBadgeDivLink:visited {
+    text-decoration: none;
+    border: none;
+}
+
+div#githubBadge img {
+   margin-right: 0.5em;
+}
+
+div#githubBadge a {
+    background-image: none;
+    padding-left: 0;
+}
+
+/*
+Home page
+*/
+
 main:has(dl#mainDl) {
     text-align: center;
 }
@@ -255,6 +299,10 @@ dl#mainDl dt {
     background-size: 1em;
     padding: 1em;
 }
+
+/*
+Project Page
+*/
 
 ul#projectList {
     display: flex;
@@ -322,67 +370,14 @@ dt.projectLink {
     }
 }
 
-div#githubBadge {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/*
+404
+*/
+
+img#notFoundImage {
+    display: block;
     margin: auto;
-    background-color: var(--github-badge-bg-color);
-    width: fit-content;
-    padding: 0.5em;
-    border-radius: 5px;
-}
-
-#githubBadgeDivLink {
-    background-image: none;
-    padding-left: 0;
-    text-decoration: none;
-    border: none;
-}
-
-#githubBadgeDivLink:visited {
-    text-decoration: none;
-    border: none;
-}
-
-div#githubBadge img {
-   margin-right: 0.5em;
-}
-
-div#githubBadge a {
-    background-image: none;
-    padding-left: 0;
-}
-
-div.descriptionDiv {
-    background-color: var(--project-element-color);
-    padding: 1em;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-a.linkButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0.25em;
-    background-color: white;
-    color: black;
-    width: 70px;
-    height: 37px;
-    padding: 0 0.5em;
-    text-decoration: none;
-    border-radius: 15px;
-    background-image: none;
-}
-
-a.linkButton:hover {
-    background-color: black;
-    color: white;
+    width: 100px;
 }
 
 /*
