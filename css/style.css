@@ -359,7 +359,7 @@ dt.projectLink {
     background-image: url("../img/mdi--web.svg");
 }
 
-@media screen and (max-width: 1322px){
+@media screen and (max-width: 1500px){
     ul#projectList {
         display: block;
         padding: 0;
